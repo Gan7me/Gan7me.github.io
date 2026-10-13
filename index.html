@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ganème Asloune — dirigeant, transformation, innovation et IA de confiance. Parcours, réalisations, formation et contact.">
+<meta property="og:title" content="Ganème Asloune">
+<meta property="og:description" content="Dirigeant · Transformation · Innovation · IA & technologies">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://ganeme-asloune.github.io/">
+<title>Ganème Asloune</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+/* Layout : colonne éditoriale de 1080px, hero texte + portrait, sections séparées par des filets, frise pour Permis de Sauver */
+:root{
+  --bg:#FBFBFA; --surface:#F2F1EE; --ink:#15233B; --fg:#2A2D34; --muted:#636976; --rule:#E2E0DA; --accent:#85662C; --accent-soft:#EFE7D6;
+  --display:'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --body:'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1726; --surface:#162136; --ink:#EEF1F6; --fg:#D3D8E1; --muted:#97A0AF; --rule:#26324A; --accent:#D2B275; --accent-soft:#2A2A2A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1726; --surface:#162136; --ink:#EEF1F6; --fg:#D3D8E1; --muted:#97A0AF; --rule:#26324A; --accent:#D2B275; --accent-soft:#2A2A2A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px;padding-block:0}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:500;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);margin-inline:-20px;padding-inline:20px}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;flex-wrap:wrap}
+.top .mark{font-family:var(--display);font-size:20px;color:var(--ink);text-decoration:none}
+.top nav{display:flex;gap:22px;flex-wrap:wrap}
+.top nav a{font-size:14px;color:var(--muted);text-decoration:none}
+.top nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center;padding-block:72px 56px}
+.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.04;letter-spacing:-.01em;margin-block:18px 22px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lede{font-size:18px;max-width:58ch;color:var(--fg)}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font:600 14px var(--body);text-decoration:none;border:1px solid var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.portrait{width:100%;max-width:300px;aspect-ratio:420/495;object-fit:cover;border-radius:22px;filter:grayscale(1);justify-self:end}
+
+/* figures */
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid var(--rule)}
+.fig{padding:26px 18px;display:flex;flex-direction:column;gap:4px}
+.fig + .fig{border-left:1px solid var(--rule)}
+.fig b{font-family:var(--display);font-weight:500;font-size:clamp(32px,4vw,46px);color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+.fig span{font-size:14px;color:var(--muted)}
+
+/* sections */
+section{padding-block:72px;border-bottom:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(28px,3.4vw,38px);line-height:1.15}
+.sec-head p{font-size:17px;max-width:62ch;color:var(--fg);align-self:end}
+.indent{margin-left:280px}
+
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
+.pillar{padding:28px 28px 30px 0;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:10px;min-width:0}
+.pillar:nth-child(2n){padding-left:28px;padding-right:0;border-left:1px solid var(--rule)}
+.pillar h3{font-size:23px}
+.pillar p{color:var(--fg);max-width:46ch}
+
+/* Permis de Sauver */
+.story{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px}
+.story .text{display:flex;flex-direction:column;gap:18px;font-size:17px;min-width:0}
+.story .quote{font-family:var(--display);font-style:italic;font-size:24px;line-height:1.35;color:var(--ink);border-left:2px solid var(--accent);padding-left:20px}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:58px;top:8px;bottom:8px;width:1px;background:var(--rule)}
+.timeline li{display:grid;grid-template-columns:58px minmax(0,1fr);gap:24px;padding-block:12px;position:relative}
+.timeline li::after{content:"";position:absolute;left:54px;top:21px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline time{font-family:var(--display);font-size:18px;color:var(--accent);font-variant-numeric:tabular-nums}
+.timeline strong{display:block;color:var(--ink);font-weight:600}
+.timeline span{color:var(--muted);font-size:15px}
+
+/* parcours */
+.roles{display:flex;flex-direction:column}
+.role{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;padding-block:26px;border-top:1px solid var(--rule)}
+.role .when{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.role .org{display:block;margin-top:6px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.role h3{font-size:24px;margin-bottom:10px}
+.role ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:66ch}
+.role li::marker{color:var(--accent)}
+
+/* formation */
+.degrees{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.degree{background:var(--surface);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.degree h3{font-size:22px}
+.degree .meta{font-size:14px;color:var(--muted)}
+.degree .thesis{font-family:var(--display);font-style:italic;font-size:17px;line-height:1.5;color:var(--ink)}
+.degree .thesis-label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.others{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--muted);font-size:15px}
+.others b{color:var(--ink);font-weight:600}
+
+/* distinctions */
+.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
+.award{padding:26px 28px 26px 0;border-bottom:1px solid var(--rule);display:flex;gap:22px;align-items:baseline;min-width:0}
+.award:nth-child(2n){padding-left:28px;border-left:1px solid var(--rule)}
+.award time{font-family:var(--display);font-size:30px;color:var(--accent);line-height:1}
+.award strong{display:block;font-family:var(--display);font-weight:500;font-size:21px;color:var(--ink)}
+.award span{color:var(--muted);font-size:15px}
+
+/* contact */
+.contact{border-bottom:0;padding-block:80px 96px}
+.contact h2{font-size:clamp(34px,5vw,54px);line-height:1.08;max-width:18ch;margin-block:14px 30px}
+.channels{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.mail{display:inline-flex;align-items:center;gap:14px;padding:10px 10px 10px 20px;border:1px solid var(--rule);border-radius:999px;background:var(--surface)}
+.mail code{font:500 16px var(--body);color:var(--ink);user-select:all}
+.mail button{background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:8px 14px;font:600 13px var(--body);cursor:pointer}
+.small{margin-top:22px;color:var(--muted);font-size:14px}
+footer{padding-block:24px 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--rule)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:32px;padding-block:44px 36px}
+  .portrait{justify-self:start;max-width:200px}
+  .sec-head,.role{grid-template-columns:1fr;gap:12px}
+  .indent{margin-left:0}
+  .story{grid-template-columns:1fr;gap:36px}
+  .figs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fig:nth-child(3){border-left:0}
+  .fig:nth-child(n+3){border-top:1px solid var(--rule)}
+  section{padding-block:52px}
+}
+@media (max-width:620px){
+  .pillars,.degrees,.awards{grid-template-columns:1fr}
+  .pillar:nth-child(2n),.award:nth-child(2n){padding-left:0;border-left:0}
+  .pillar,.award{padding-right:0}
+  .top nav{gap:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero > *{animation:rise .7s ease-out both}
+  .hero > *:nth-child(2){animation-delay:.12s}
+  @keyframes rise{from{transform:translateY(10px)}to{transform:none}}
+}
+</style>
+</head>
+<body>
+
+<style>
+.prose{display:flex;flex-direction:column;gap:16px;font-size:17px;max-width:68ch}
+.prose strong{color:var(--ink);font-weight:600}
+.ticks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
+.ticks li{padding:14px 18px 14px 0;border-bottom:1px solid var(--rule);display:flex;gap:12px;align-items:baseline;min-width:0}
+.ticks li::before{content:"";flex:0 0 7px;height:7px;border-radius:50%;background:var(--accent);transform:translateY(-2px)}
+.ticks li:nth-child(2n){padding-left:18px;border-left:1px solid var(--rule)}
+.keyline{font-family:var(--display);font-size:clamp(22px,2.6vw,28px);line-height:1.35;color:var(--ink);border-left:2px solid var(--accent);padding-left:22px;max-width:40ch}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:7px 14px;border:1px solid var(--rule);border-radius:999px;font-size:14px;color:var(--fg);background:var(--surface)}
+.chip.strong{border-color:var(--ink);color:var(--ink);font-weight:600;background:transparent}
+.sub{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+@media (max-width:860px){.cols{grid-template-columns:1fr;gap:36px}}
+@media (max-width:620px){.ticks{grid-template-columns:1fr}.ticks li:nth-child(2n){padding-left:0;border-left:0}}
+
+.ico{width:26px;height:26px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.brief{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;background:var(--surface);border-radius:18px;margin-top:40px;overflow:hidden}
+.brief div{padding:22px 24px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.brief div + div{border-left:1px solid var(--rule)}
+.brief dt{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.brief dd{margin:0;font-size:15px;line-height:1.45;color:var(--ink)}
+.brief-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:56px}
+.brief-title h2{font-size:24px}
+.brief-title span{font-size:13px;color:var(--muted)}
+.tl-scroll{overflow-x:auto;margin-top:8px}
+.tl{min-width:680px;display:grid;grid-template-columns:250px minmax(0,1fr);row-gap:14px;align-items:center}
+.tl .lab{font-size:14px;color:var(--ink);font-weight:500;line-height:1.3}
+.tl .lab small{display:block;color:var(--muted);font-weight:400;font-size:12.5px}
+.tl .track{position:relative;height:30px;border-radius:999px;background:linear-gradient(var(--rule),var(--rule)) center/100% 1px no-repeat}
+.tl .bar{position:absolute;top:6px;height:18px;border-radius:999px}
+.tl .bar.pub{background:var(--ink)}
+.tl .bar.ent{background:var(--accent)}
+.tl .bar.edu{background:transparent;border:2px solid var(--muted)}
+.tl .dot{position:absolute;top:4px;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);display:grid;place-items:center;font-size:10px;font-weight:700;color:var(--accent)}
+.tl .axis{grid-column:2;position:relative;height:22px;border-top:1px solid var(--rule)}
+.tl .axis span{position:absolute;top:6px;transform:translateX(-50%);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl .grp{grid-column:1 / -1;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px;padding-top:12px;border-top:1px solid var(--rule)}
+.tl .grp:first-child{border-top:0;margin-top:0;padding-top:0}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:22px;height:10px;border-radius:99px;margin-right:8px;vertical-align:middle}
+.eco{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.eco div{display:flex;gap:14px;align-items:flex-start;padding:20px;border:1px solid var(--rule);border-radius:14px;min-width:0;font-size:15px;line-height:1.45;color:var(--ink)}
+.pillar .ico{width:30px;height:30px}
+@media (max-width:860px){.brief{grid-template-columns:repeat(2,minmax(0,1fr))}.brief div:nth-child(3){border-left:0}.brief div:nth-child(n+3){border-top:1px solid var(--rule)}.eco{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.brief{grid-template-columns:1fr}.brief div + div{border-left:0;border-top:1px solid var(--rule)}.eco{grid-template-columns:1fr}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#haut">Ganème Asloune</a>
+    <nav aria-label="Sections">
+      <a href="#trajectoire">Trajectoire</a>
+      <a href="#entreprendre">Entrepreneuriat</a>
+      <a href="#difference">Singularité</a>
+      <a href="#positionnement">Positionnement</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="haut">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Dirigeant · Transformation · Innovation · IA &amp; technologies</p>
+      <h1>Conjuguer la vision du dirigeant <em>à l'exigence du terrain.</em></h1>
+      <p class="lede">Mon parcours s'est construit au confluent de la direction d'entreprise, du management public et de l'innovation technologique. Depuis plus de vingt ans, j'exerce dans des environnements où la responsabilité ne se délègue pas, où la décision doit précéder la certitude et où la réussite procède toujours de la capacité à fédérer des acteurs aux logiques divergentes.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Prendre contact</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/ganème-asloune">Profil LinkedIn</a>
+      </div>
+    </div>
+    <img class="portrait" src="data:image/jpeg;base64,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" alt="Portrait de Ganème Asloune">
+  </div>
+
+  <div class="figs" role="list">
+    <div class="fig" role="listitem"><b>20 ans</b><span>de commandement opérationnel</span></div>
+    <div class="fig" role="listitem"><b>100 000+</b><span>utilisateurs de l'écosystème Permis de Sauver</span></div>
+    <div class="fig" role="listitem"><b>1,5 M€</b><span>levés auprès d'investisseurs privés</span></div>
+    <div class="fig" role="listitem"><b>140</b><span>formateurs coordonnés au SDMIS</span></div>
+  </div>
+
+
+  <div class="brief-title"><h2>L'essentiel</h2><span>Synthèse à l'intention des recruteurs</span></div>
+  <dl class="brief">
+    <div><dt>Fonctions visées</dt><dd>Direction générale, opérations, transformation et innovation, programmes</dd></div>
+    <div><dt>Périmètre managérial</dt><dd>Équipes de 1 à 15 collaborateurs · réseau de 140 formateurs</dd></div>
+    <div><dt>Formation</dt><dd>Executive MBA emlyon · Mastère Spécialisé IA de Confiance, CentraleSupélec</dd></div>
+    <div><dt>Localisation</dt><dd>Lyon</dd></div>
+  </dl>
+
+  <section id="trajectoire">
+    <div class="sec-head">
+      <p class="eyebrow">Trajectoire</p>
+      <h2>Deux carrières menées de front depuis plus de dix ans.</h2>
+    </div>
+    <div class="tl-scroll"><div class="tl" role="img" aria-label="Frise chronologique : commandement opérationnel depuis 2007, ingénierie de formation depuis 2017, direction de RESILIENCE depuis 2015, Nexisafe depuis 2025, Executive MBA 2021 à 2023, Mastère Spécialisé 2025 à 2026."><div class="grp">Service public</div><div class="lab">Commandant des opérations<small>SDMIS · Lyon Métropole</small></div><div class="track"><span class="bar pub" style="left:9.09%;width:90.0%"></span></div><div class="lab">Ingénierie de formation<small>SDMIS · 140 formateurs</small></div><div class="track"><span class="bar pub" style="left:54.55%;width:44.54%"></span></div><div class="grp">Entrepreneuriat</div><div class="lab">Président puis directeur général<small>RESILIENCE SAS · Permis de Sauver, Veyoon</small></div><div class="track"><span class="bar ent" style="left:45.45%;width:53.64%"></span><span class="dot" style="left:59.09%" title="Prix Préventica 2018">★</span><span class="dot" style="left:63.64%" title="Trophée Europe 1, 2019">★</span></div><div class="lab">Fondateur, directeur général<small>Nexisafe</small></div><div class="track"><span class="bar ent" style="left:90.91%;width:8.18%"></span></div><div class="grp">Formation</div><div class="lab">Executive MBA<small>emlyon business school</small></div><div class="track"><span class="bar edu" style="left:72.73%;width:9.09%"></span></div><div class="lab">Mastère Spécialisé IA de Confiance<small>CentraleSupélec</small></div><div class="track"><span class="bar edu" style="left:90.91%;width:7.27%"></span></div><div class="axis"><span style="left:0.0%">2005</span><span style="left:22.73%">2010</span><span style="left:45.45%">2015</span><span style="left:68.18%">2020</span><span style="left:90.91%">2025</span></div></div></div>
+    <div class="legend"><span><i style="background:var(--ink)"></i>Service public</span><span><i style="background:var(--accent)"></i>Entrepreneuriat</span><span><i style="border:2px solid var(--muted)"></i>Formation diplômante</span><span>★ Distinction</span></div>
+  </section>
+
+  <section id="profil">
+    <div class="sec-head">
+      <p class="eyebrow">Management d'organisations complexes</p>
+      <h2>L'art d'ordonner la complexité au sein d'une institution exigeante.</h2>
+    </div>
+    <div class="indent prose">
+      <p>Commandant des opérations de secours au SDMIS, j'assume parallèlement la responsabilité de l'ingénierie de formation d'un service métropolitain, mission qui m'a conduit à concevoir des dispositifs dont bénéficient chaque année plusieurs milliers d'agents.</p>
+      <p>J'y coordonne un réseau de <strong>140 formateurs, dont 15 formateurs de formateurs</strong>. Ce périmètre embrasse l'élaboration de la doctrine, l'évaluation des compétences, la veille réglementaire, le recrutement des formateurs ainsi que l'animation de groupes de travail dont les conclusions infléchissent durablement les pratiques de l'institution.</p>
+      <p>J'en retire une conviction forgée par l'expérience : une organisation ne se transforme qu'à la condition de <strong>donner du sens aux experts qui la composent</strong> avant de leur demander d'en épouser les orientations.</p>
+    </div>
+  </section>
+
+  <section id="entreprendre">
+    <div class="sec-head">
+      <p class="eyebrow">Expérience entrepreneuriale</p>
+      <h2>Une décennie consacrée à concevoir, financer puis diriger.</h2>
+    </div>
+    <div class="indent" style="display:flex;flex-direction:column;gap:32px">
+      <div class="prose">
+        <p>Animé par la volonté de faire de chaque citoyen formé un acteur à part entière de la chaîne des secours, j'ai fondé RESILIENCE SAS puis développé <strong>Permis de Sauver</strong>, aujourd'hui commercialisé sous la marque Veyoon : une plateforme technologique dédiée à l'alerte citoyenne, aux premiers secours ainsi qu'à la prévention.</p>
+        <p>Successivement président puis directeur général, j'ai éprouvé l'ensemble des responsabilités qui incombent à un dirigeant : convaincre des investisseurs, négocier avec des institutions, arbitrer les orientations du produit, préserver l'équilibre financier d'une entreprise en croissance. Cet écosystème s'est déployé auprès d'acteurs publics comme privés, en France ainsi qu'à l'international, notamment par voie de conventions conclues avec 28 SDIS.</p>
+      </div>
+      <div>
+        <p class="sub">Un écosystème numérique complet</p>
+        <div class="eco"><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.6c2.6.2 4.5 1.9 5 4.9"/></svg><span>Mobilisation de citoyens sauveteurs</span></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.1-6.5-11a6.5 6.5 0 0 1 13 0c0 4.9-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span>Cartographie des défibrillateurs</span></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M8.5 12a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="12" r="1"/><path d="M12 13v8"/></svg><span>Interfaces avec les services de secours</span></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5V5.5"/><path d="M8 7h8"/></svg><span>Outils de prévention et de formation</span></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6"/></svg><span>Détection d'accidents et de situations à risque</span></div><div><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m8.5 8-4 4 4 4"/><path d="m15.5 8 4 4-4 4"/><path d="m13.5 5-3 14"/></svg><span>Exploitation des données, API d'intégration</span></div></div>
+      </div>
+      <p style="font-size:17px;max-width:68ch">Je prolonge aujourd'hui cette trajectoire à la tête de <strong>Nexisafe</strong>, organisme de formation professionnelle dont j'assure la direction générale.</p>
+    </div>
+  </section>
+
+  <section id="dirigeant">
+    <div class="sec-head">
+      <p class="eyebrow">Une conception de la direction</p>
+      <h2>Décider avec discernement lorsque l'information demeure lacunaire.</h2>
+    </div>
+    <div class="indent" style="display:flex;flex-direction:column;gap:28px">
+      <p class="keyline">La stratégie ne vaut que par sa traduction opérationnelle ; l'exécution ne vaut que par l'adhésion de ceux qui la portent.</p>
+      <div class="prose">
+        <p>La singularité de mon parcours tient moins à un secteur qu'à une aptitude : appréhender une situation dont les données demeurent incomplètes, en discerner les enjeux essentiels puis engager une décision dont j'assume pleinement les conséquences humaines, organisationnelles et financières.</p>
+        <p>J'ai appris à dialoguer avec des interlocuteurs dont les cultures diffèrent profondément : élus et ministères, ingénieurs et développeurs, investisseurs et partenaires industriels. Cette aisance à faire converger des mondes qui s'ignorent constitue sans doute l'un de mes atouts les plus précieux pour une fonction de direction transversale.</p>
+        <p>Mon management se veut participatif et délégatif. J'observe, j'écoute puis je m'attache à comprendre avant de proposer ; je sais confier des responsabilités en toute confiance. La reconnaissance du travail accompli demeure à mes yeux un levier d'engagement que rien ne saurait remplacer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="difference">
+    <div class="sec-head">
+      <p class="eyebrow">Ce qui me distingue</p>
+      <h2>Des dimensions rarement réunies chez un même dirigeant.</h2>
+    </div>
+    <div class="pillars">
+      <article class="pillar">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg>
+        <h3>Une véritable expérience du terrain</h3>
+        <p>Plus de vingt années passées dans des environnements où chaque décision produit des effets immédiats et irréversibles.</p>
+      </article>
+      <article class="pillar">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3.5 2 5 5.5 5 9.5L15 15H9l-2-2.5C7 8.5 8.5 5 12 3z"/><circle cx="12" cy="9.5" r="1.6"/><path d="M9 15l-2 4 3-1.5M15 15l2 4-3-1.5"/></svg>
+        <h3>Une expérience entrepreneuriale concrète</h3>
+        <p>La connaissance intime des réalités d'une entreprise, de la levée de fonds à la construction d'un produit jusqu'aux arbitrages qui engagent son avenir.</p>
+      </article>
+      <article class="pillar">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17h20"/><path d="M4 17V9M20 17V9"/><path d="M4 9c4 0 4 5 8 5s4-5 8-5"/><path d="M8 17v-4M12 17v-3M16 17v-4"/></svg>
+        <h3>L'aptitude à faire dialoguer des mondes</h3>
+        <p>Saisir d'un même regard les contraintes humaines, technologiques, institutionnelles ainsi qu'économiques d'une organisation.</p>
+      </article>
+      <article class="pillar">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v14"/><path d="M5 13a7 7 0 0 0 14 0"/><path d="M8 10h8"/></svg>
+        <h3>Une résilience éprouvée</h3>
+        <p>Un attachement profond au collectif, conjugué à l'exigence constante de bâtir des solutions efficaces dont la pérennité est assurée.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="sec-head">
+      <p class="eyebrow">Formation</p>
+      <h2>Adosser l'expérience du terrain à la rigueur académique.</h2>
+    </div>
+    <div class="degrees">
+      <article class="degree">
+        <h3>Executive MBA</h3>
+        <p class="meta">emlyon business school · 2021 – 2023</p>
+        <p>Stratégie, finance, leadership, gouvernance, transformation des organisations et développement international.</p>
+        <p class="thesis-label">Thèse</p>
+        <p class="thesis">Comment maximiser l'impact social par l'innovation technologique tout en assurant la viabilité économique ?</p>
+      </article>
+      <article class="degree">
+        <h3>Mastère Spécialisé Intelligence Artificielle de Confiance</h3>
+        <p class="meta">CentraleSupélec · 2025 – 2026</p>
+        <p>Qualité des données, apprentissage automatique, robustesse ainsi que conditions de déploiement des systèmes d'IA. Je m'intéresse avant tout à l'intelligence artificielle en tant que levier de transformation des organisations, bien davantage qu'en tant qu'objet technologique.</p>
+        <p class="thesis-label">Thèse professionnelle</p>
+        <p class="thesis">Dans quelle mesure une IA de confiance permet-elle d'accroître la performance et la résilience de la chaîne de secours citoyenne, en optimisant la couverture opérationnelle et en fiabilisant la décision d'engagement sous incertitude ?</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="positionnement">
+    <div class="sec-head">
+      <p class="eyebrow">Positionnement</p>
+      <h2>Des fonctions de direction au cœur des transformations.</h2>
+    </div>
+    <div class="indent cols">
+      <div>
+        <p class="sub">Fonctions visées</p>
+        <div class="chips">
+          <span class="chip strong">Directeur général · exécutif</span>
+          <span class="chip strong">Directeur des opérations</span>
+          <span class="chip strong">Directeur transformation &amp; innovation</span>
+          <span class="chip strong">Directeur stratégie &amp; développement</span>
+          <span class="chip strong">Directeur de programme</span>
+        </div>
+      </div>
+      <div>
+        <p class="sub">Environnements</p>
+        <div class="chips">
+          <span class="chip">Industrie</span><span class="chip">Technologie</span><span class="chip">Services B2B et B2G</span>
+          <span class="chip">Infrastructures</span><span class="chip">Mobilité</span><span class="chip">Formation et compétences</span>
+          <span class="chip">Organisations publiques</span><span class="chip">Transformation numérique</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projet">
+    <div class="sec-head">
+      <p class="eyebrow">Projet professionnel</p>
+      <h2>Exercer pleinement des responsabilités à la mesure de mon parcours.</h2>
+    </div>
+    <div class="indent" style="display:flex;flex-direction:column;gap:28px">
+      <p class="prose">J'aspire désormais à rejoindre une organisation au sein de laquelle mon expérience de dirigeant pourra s'exercer sur des enjeux plus vastes que mon domaine d'origine. Je porte un intérêt particulier aux contextes dans lesquels il convient de :</p>
+      <ul class="ticks">
+        <li>conduire une transformation d'envergure</li>
+        <li>structurer une activité ou une organisation</li>
+        <li>développer une offre nouvelle</li>
+        <li>industrialiser une innovation</li>
+        <li>fédérer une équipe pluridisciplinaire</li>
+        <li>traduire une stratégie en résultats tangibles</li>
+      </ul>
+      <p class="keyline">Mon parcours obéit à une constante : se saisir des problématiques complexes, bâtir autour d'elles une organisation, puis transformer une vision en capacité d'action durable.</p>
+    </div>
+  </section>
+
+  <section id="distinctions">
+    <div class="sec-head">
+      <p class="eyebrow">Distinctions &amp; exposition</p>
+      <h2>Une démarche saluée par ses pairs comme par les institutions.</h2>
+    </div>
+    <div class="awards">
+      <div class="award"><time>2019</time><div><strong>Trophée de la solidarité</strong><span>Europe 1 Future Awards</span></div></div>
+      <div class="award"><time>2018</time><div><strong>Prix de l'innovation premiers secours</strong><span>Préventica Lyon</span></div></div>
+    </div>
+    <p class="small">Interventions en télévision et en radio · travaux avec des ministères, des élus et des organisations publiques · Alumni emlyon · Digital League · IA Café Club · Village by CA</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Je serais heureux d'échanger sur vos enjeux.</h2>
+    <div class="channels">
+      <div class="mail"><code id="email">gads@live.fr</code><button type="button" id="copy">Copier</button></div>
+      <a class="btn ghost" href="https://www.linkedin.com/in/ganème-asloune">LinkedIn</a>
+    </div>
+    <p class="small">Basé à Lyon</p>
+  </section>
+
+  <footer>© 2026 Ganème Asloune</footer>
+</main>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var btn = this, el = document.getElementById('email');
+  function done(){ btn.textContent = 'Copié'; setTimeout(function(){ btn.textContent = 'Copier'; }, 1800); }
+  function fallback(){ var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Sélectionné'; }
+  try { navigator.clipboard.writeText(el.textContent).then(done, fallback); } catch(e){ fallback(); }
+});
+</script>
+
+</body>
+</html>
